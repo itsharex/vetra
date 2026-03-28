@@ -1,0 +1,31 @@
+# Vetra
+
+简体中文 | [English](./README.en.md)
+
+一个极简的 Windows 桌面应用模板，基于 Vue 3、Tauri 2、Naive UI 和 UnoCSS，默认采用透明窗口、深色界面与 Windows 11 Mica 风格。
+
+## 截图
+
+![截图 1](./docs/screenshots/shots_1.png)
+![截图 2](./docs/screenshots/shots_2.png)
+![截图 3](./docs/screenshots/shots_3.png)
+
+## 技术栈
+
+- Vue 3 + TypeScript + Vite
+- Tauri 2 + Rust
+- Naive UI
+- UnoCSS
+
+## 开发
+
+```bash
+# 安装依赖
+pnpm i
+# 启动
+pnpm run windows:dev
+# 打包
+pnpm run windows:build
+# 代码检查
+pnpm run lint
+```
