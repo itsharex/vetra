@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { open } from '@tauri-apps/plugin-shell'
+import { openUrl } from '@tauri-apps/plugin-opener'
 
 function toUrl(url: string) {
-  open(url)
+  openUrl(url)
 }
 </script>
 
