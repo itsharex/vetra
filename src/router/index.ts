@@ -9,7 +9,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'Layout',
-      redirect: '/start',
+      redirect: '/welcome',
       component: DefaultLayout,
       children: [
         {
