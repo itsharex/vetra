@@ -1,3 +1,15 @@
+<route lang="json5">
+{
+  name: 'Start',
+  meta: {
+    layout: 'main',
+    isTab: true,
+    tabsName: '开始',
+    tabOrder: 2,
+  },
+}
+</route>
+
 <script setup lang="ts">
 import { openUrl } from '@tauri-apps/plugin-opener'
 
@@ -11,7 +23,7 @@ function toUrl(url: string) {
     <n-card title="简介">
       这是一个面向 Windows 的桌面应用起步模板，基于 Vue 3 与 Tauri 2 构建，组件库采用Naive UI。
     </n-card>
-    <n-card title="组件展示" class="mt-2">
+    <n-card title="组件展示" class="mt-5">
       <template #header-extra>
         <div
           class="text-stone-400 flex gap-1 cursor-default items-center hover:text-stone-300"

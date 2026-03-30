@@ -1,3 +1,15 @@
+<route lang="json5">
+{
+  name: 'Welcome',
+  meta: {
+    layout: 'main',
+    isTab: true,
+    tabsName: '欢迎',
+    tabOrder: 1,
+  },
+}
+</route>
+
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 

@@ -29,3 +29,19 @@ pnpm run windows:build
 # lint
 pnpm run lint
 ```
+
+## Page Route Meta
+
+```vue
+<route lang="json5">
+{
+  name: 'Welcome', // route name
+  meta: {
+    layout: 'main', // layout used by the page
+    isTab: true, // show in the top tabs
+    tabsName: 'Welcome', // text shown in the tabs
+    tabOrder: 1, // tab order
+  },
+}
+</route>
+```

@@ -5,12 +5,18 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
+import VueRouter from 'vue-router/vite'
 
 const host = process.env.TAURI_DEV_HOST
 
 // https://vite.dev/config/
 export default defineConfig(async () => ({
   plugins: [
+    VueRouter({
+      dts: 'src/route-map.d.ts',
+      routesFolder: 'src/pages',
+      exclude: ['**/components/**'],
+    }),
     vue(),
     AutoImport({
       imports: [
@@ -39,11 +45,6 @@ export default defineConfig(async () => ({
       '@layouts': resolve(__dirname, 'src/layouts'),
       '@components': resolve(__dirname, 'src/components'),
       '@composables': resolve(__dirname, 'src/common/composables'),
-      '@assets': resolve(__dirname, 'src/common/assets'),
-      '@apis': resolve(__dirname, 'src/common/apis'),
-      '@http': resolve(__dirname, 'src/common/http'),
-      '@utils': resolve(__dirname, 'src/common/utils'),
-      '@pinia': resolve(__dirname, 'src/pinia'),
     },
   },
 

@@ -11,6 +11,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BlankLayout: typeof import('./src/components/layouts/BlankLayout.vue')['default']
+    MainLayout: typeof import('./src/components/layouts/MainLayout.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NCard: typeof import('naive-ui')['NCard']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
@@ -21,6 +23,7 @@ declare module 'vue' {
     PageHeader: typeof import('./src/components/PageHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SettingsLayout: typeof import('./src/components/layouts/SettingsLayout.vue')['default']
     Tabs: typeof import('./src/components/Tabs.vue')['default']
   }
 }

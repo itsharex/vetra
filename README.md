@@ -29,3 +29,19 @@ pnpm run windows:build
 # 代码检查
 pnpm run lint
 ```
+
+## 页面路由元数据
+
+```vue
+<route lang="json5">
+{
+  name: 'Welcome', // 路由名称
+  meta: {
+    layout: 'main', // 使用的布局
+    isTab: true, // 是否显示在顶部标签栏
+    tabsName: '欢迎', // 标签栏显示文字
+    tabOrder: 1, // 标签栏排序
+  },
+}
+</route>
+```

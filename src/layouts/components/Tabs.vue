@@ -3,8 +3,7 @@ import type { MenuOption } from 'naive-ui'
 import type { RouteRecordRaw } from 'vue-router'
 import { computed, h } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
-
-import router from '@/router'
+import { routes } from 'vue-router/auto-routes'
 
 const route = useRoute()
 const appRouter = useRouter()
@@ -16,31 +15,39 @@ function getTabRoutes(routes: readonly RouteRecordRaw[]): RouteRecordRaw[] {
   })
 }
 
+function getTabOrder(route: RouteRecordRaw) {
+  return typeof route.meta?.tabOrder === 'number'
+    ? route.meta.tabOrder
+    : Number.MAX_SAFE_INTEGER
+}
+
 const menuOptions = computed<MenuOption[]>(() =>
-  getTabRoutes(router.options.routes).flatMap((item) => {
-    const name = typeof item.name === 'string' ? item.name : ''
-    const tabsName = typeof item.meta?.tabsName === 'string' ? item.meta.tabsName : ''
+  getTabRoutes(routes)
+    .sort((a, b) => getTabOrder(a) - getTabOrder(b))
+    .flatMap((item) => {
+      const name = typeof item.name === 'string' ? item.name : ''
+      const tabsName = typeof item.meta?.tabsName === 'string' ? item.meta.tabsName : ''
 
-    if (!name || !tabsName) {
-      return []
-    }
+      if (!name || !tabsName) {
+        return []
+      }
 
-    return [
-      {
-        label: () =>
-          h(
-            RouterLink,
-            {
-              to: {
-                name,
+      return [
+        {
+          label: () =>
+            h(
+              RouterLink as any,
+              {
+                to: {
+                  name,
+                },
               },
-            },
-            { default: () => tabsName },
-          ),
-        key: name,
-      },
-    ]
-  }),
+              { default: () => tabsName },
+            ),
+          key: name,
+        },
+      ]
+    }),
 )
 
 const activeKey = computed(() => {

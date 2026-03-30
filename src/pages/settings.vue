@@ -1,3 +1,12 @@
+<route lang="json5">
+{
+  name: 'Settings',
+  meta: {
+    layout: 'settings',
+  },
+}
+</route>
+
 <script setup lang="ts">
 import { openUrl } from '@tauri-apps/plugin-opener'
 import { ref } from 'vue'
