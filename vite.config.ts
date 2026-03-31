@@ -1,5 +1,6 @@
 import { resolve } from 'node:path'
 import vue from '@vitejs/plugin-vue'
+import MotionResolver from 'motion-v/resolver'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
@@ -32,7 +33,8 @@ export default defineConfig(async () => ({
       ],
     }),
     Components({
-      resolvers: [NaiveUiResolver()],
+      dts: true,
+      resolvers: [NaiveUiResolver(), MotionResolver()],
     }),
     UnoCSS(),
   ],
