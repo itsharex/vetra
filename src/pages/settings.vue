@@ -16,8 +16,8 @@ import { appConfig } from '@/config/app'
 const isAutoStart = ref(false)
 const isUpdate = ref(false)
 
-async function openAuthorSite() {
-  await openUrl(appConfig.authorUrl)
+async function openAuthorSite(url: string) {
+  await openUrl(url)
 }
 </script>
 
@@ -48,15 +48,15 @@ async function openAuthorSite() {
     </div>
 
     <footer class="text-xs text-white/55 mt-auto pt-4 flex items-center justify-between">
-      <span>
-        ©2026
-        <button class="author-link" type="button" @click="openAuthorSite">
-          {{ appConfig.authorName }}
+      <span class="inline-flex gap-1 items-center">
+        Built with
+        <button class="link" type="button" @click="openAuthorSite(appConfig.projectTemplateUrl)">
+          {{ appConfig.projectTemplate }}
         </button>
       </span>
-      <span>
-        designed by
-        <button class="author-link" type="button" @click="openAuthorSite">
+      <span class="inline-flex gap-1 items-center">
+        ©2026
+        <button class="link" type="button" @click="openAuthorSite(appConfig.authorUrl)">
           {{ appConfig.authorName }}
         </button>
       </span>
@@ -65,7 +65,7 @@ async function openAuthorSite() {
 </template>
 
 <style scoped>
-.author-link {
+.link {
   --uno: 'ml-1 cursor-pointer text-white/80 transition hover:text-white'
 }
 </style>

@@ -1,5 +1,7 @@
 export const appConfig = {
-  authorName: 'LsAng',
+  authorName: 'Lsang',
   authorUrl: 'https://llds.cloud',
+  projectTemplate: 'Vetra',
+  projectTemplateUrl: 'https://github.com/llds66/vetra',
   version: 'v0.1.0',
 } as const
