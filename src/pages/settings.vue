@@ -8,16 +8,40 @@
 </route>
 
 <script setup lang="ts">
+import type { CloseBehavior } from '@/utils/desktop-preferences'
 import { openUrl } from '@tauri-apps/plugin-opener'
-import { ref } from 'vue'
 
+import { computed, ref } from 'vue'
 import { appConfig } from '@/config/app'
+import {
+
+  getCloseBehavior,
+  setCloseBehavior,
+  syncCloseBehavior,
+} from '@/utils/desktop-preferences'
 
 const isAutoStart = ref(false)
 const isUpdate = ref(false)
+const closeBehavior = ref<CloseBehavior>(getCloseBehavior())
+const closeBehaviorOptions = computed(() => [
+  {
+    label: '退出程序',
+    value: 'exit' satisfies CloseBehavior,
+  },
+  {
+    label: '最小化到托盘',
+    value: 'tray' satisfies CloseBehavior,
+  },
+])
 
 async function openAuthorSite(url: string) {
   await openUrl(url)
+}
+
+async function handleCloseBehaviorChange(value: CloseBehavior) {
+  closeBehavior.value = value
+  setCloseBehavior(value)
+  await syncCloseBehavior(value)
 }
 </script>
 
@@ -35,6 +59,23 @@ async function openAuthorSite(url: string) {
         <div class="flex items-center justify-between">
           <span>自动更新</span>
           <n-switch v-model:value="isUpdate" />
+        </div>
+      </n-card>
+      <n-card>
+        <div class="flex gap-4 items-center justify-between">
+          <div class="flex flex-col gap-1">
+            <span>关闭时</span>
+            <span class="text-xs text-white/55">
+              点击关闭按钮后的行为
+            </span>
+          </div>
+          <n-select
+            :value="closeBehavior"
+            :options="closeBehaviorOptions"
+            class="shrink-0 w-32"
+            size="small"
+            @update:value="handleCloseBehaviorChange"
+          />
         </div>
       </n-card>
       <n-card>
