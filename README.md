@@ -6,9 +6,9 @@
 
 ## 截图
 
-![截图 1](./docs/screenshots/shots_1.png)
-![截图 2](./docs/screenshots/shots_2.png)
-![截图 3](./docs/screenshots/shots_3.png)
+![截图 1](./docs/screenshots/1_0417.png)
+![截图 2](./docs/screenshots/2_0417.png)
+![截图 3](./docs/screenshots/3_0417.png)
 
 ## 技术栈
 
