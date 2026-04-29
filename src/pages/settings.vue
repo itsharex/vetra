@@ -110,10 +110,18 @@ onMounted(() => {
         </div>
       </n-card>
       <n-card>
-        <div class="flex items-center justify-between">
+        <div class="flex gap-4 items-center justify-between">
           <span>版本信息</span>
-          <div>
-            {{ appConfig.version }}
+          <div class="flex gap-3 min-w-0 items-center">
+            <img class="shrink-0 h-9 w-9 object-contain" src="/logo.png" alt="Vetra Logo">
+            <div class="flex flex-col gap-0.5 min-w-0 items-end">
+              <span class="text-sm text-white max-w-40 truncate">
+                {{ appConfig.projectTemplate }}
+              </span>
+              <span class="text-xs text-white/55">
+                {{ appConfig.version }}
+              </span>
+            </div>
           </div>
         </div>
       </n-card>

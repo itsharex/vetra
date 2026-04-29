@@ -1,14 +1,16 @@
 # Vetra
 
-简体中文 | [English](./README.en.md)
+<p align="center">
+  <img src="public/logo.png" alt="Flux Logo" width="160" />
+</p>
 
 一个极简的 Windows 桌面应用模板，基于 Vue 3、Tauri 2、Naive UI 和 UnoCSS，默认采用透明窗口、深色界面与 Windows 11 Mica 风格。
 
 ## 截图
 
-![截图 1](./docs/screenshots/1_0417.png)
-![截图 2](./docs/screenshots/2_0417.png)
-![截图 3](./docs/screenshots/3_0417.png)
+![截图 1](./docs/screenshots/1-0429.png)
+![截图 2](./docs/screenshots/2-0429.png)
+![截图 3](./docs/screenshots/3-0429.png)
 
 ## 技术栈
 
@@ -45,7 +47,6 @@ pnpm run lint
 }
 </route>
 ```
-
 
 ## 致谢
 [**Linux.Do 社区**](https://linux.do) (真诚 、友善 、团结 、专业)

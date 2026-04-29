@@ -11,6 +11,7 @@ function setupScrollbarVisibility() {
   let hasPointerInside = false
 
   const syncScrollbarState = () => {
+    root.dataset.windowFocused = String(hasWindowFocus)
     root.dataset.scrollbarActive = String(hasWindowFocus && hasPointerInside)
   }
 

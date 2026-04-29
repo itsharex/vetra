@@ -18,8 +18,8 @@ const router = useRouter()
 
 <template>
   <div class="flex flex-col h-full items-center justify-center">
-    <div class="flex gap-1 items-center justify-center">
-      <div class="i-mdi-alpha-v-circle-outline text-5xl" />
+    <div class="flex gap-2 items-center justify-center">
+      <img class="h-12 w-12 object-contain" src="/logo.png" alt="Vetra Logo">
       <div class="text-4xl font-500">
         Vetra
       </div>

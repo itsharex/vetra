@@ -11,7 +11,7 @@ on:
         required: true
         type: string
       release_name:
-        description: 'Optional release title'
+        description: Optional release title
         required: false
         type: string
 
@@ -48,7 +48,7 @@ jobs:
       - name: Cache Rust build artifacts
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: './src-tauri -> target'
+          workspaces: ./src-tauri -> target
 
       - name: Install frontend dependencies
         run: pnpm install --frozen-lockfile

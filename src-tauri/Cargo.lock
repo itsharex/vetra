@@ -4184,6 +4184,7 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 name = "vetra"
 version = "0.1.0"
 dependencies = [
+ "raw-window-handle",
  "serde",
  "serde_json",
  "tauri",
@@ -4191,6 +4192,7 @@ dependencies = [
  "tauri-plugin-autostart",
  "tauri-plugin-opener",
  "window-vibrancy",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
